@@ -1,0 +1,16 @@
+--Made by me.
+
+local Player = game.Players.LocalPlayer
+local StandName = Player.PlayerStats.Stand.Value
+local StandsFolder = game:GetService("ReplicatedStorage").Stands
+
+for i, v in pairs(StandsFolder[StandName]["Skill Tree"].Skills:GetChildren()) do
+local args = {
+    [1] = "LearnSkill",
+    [2] = {
+        ["Skill"] = v.Name,
+        ["SkillTreeType"] = "Stand"
+    }
+}
+game:GetService("Players").LocalPlayer.Character.RemoteFunction:InvokeServer(unpack(args))
+end
