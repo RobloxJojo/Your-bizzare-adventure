@@ -1,3 +1,5 @@
+--Not made by me.
+
 local Func = game.Players.LocalPlayer.Character.RemoteFunction
 
 getgenv().toggle = true
